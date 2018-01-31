@@ -2,7 +2,7 @@
 
 #' @title get files in the package
 pkg_file <- function(..., mustWork = TRUE) {
-    system.file(..., package = "bioinfor", mustWork = mustWork)
+    system.file(..., package = "biozhuoer", mustWork = mustWork)
 }
 
 
