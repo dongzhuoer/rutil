@@ -1,0 +1,629 @@
+#NEXUS
+[saved by seaview on Thu Jun 29 19:40:38 2017]
+BEGIN DATA;
+  DIMENSIONS NTAX=62 NCHAR=475;
+  FORMAT DATATYPE=PROTEIN
+  GAP=-
+  ;
+MATRIX
+[1] Acanthisitta_chloris_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[2] Amazona_aestiva_protein
+MLAQGKGPQAQCSSQCSSHDASQSHCPPQLPASAGPRHHPAPPHMAPGRRQGRPHVPLVY
+VNSFGSHRCGSVIRYGSSCREAEAGRDGPLFSQLSTTGKAGKQRAALVPGHKTSPGPAAG
+GRRQVVGSCGVVEPVSRHHSDLQEAKADTFDFPFPSRNVDKVIKRKKEKSKVWPKVWKVI
+SKMLAENEEFRSRLSTCKQFNGEGNDMSQSSQNEPSSLDRLVKINVGSCSFISLEAKDVK
+APKEEMEYALILREVEYLLKDAEYXHFTLTVVPLEWAILCFLSCRSGKQGPRMVKLGSNL
+NDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKGKLRVPKIA
+EFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPAS
+LDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKTEGH
+[3] Anas_platyrhynchos_Jarvis
+MVKLGSNLNDKNSKPPSGEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[4] Anser_cygnoides_protein
+MCEVSLGVACCVARNLGVKPRKPIRQGKVSQTGQKSSSHYPCDNDRLAGFRSGKQGPRMV
+KLGSNLNDKNSKPPSGEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKGKL
+RVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHK
+RCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKTEG
+H
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------
+[5] Antrostomus_carolinensis_Jarvis
+QVIVKTRTEYQPDQKNKGKLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLV
+VYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAV
+SPWLSSGSANHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------
+[6] Apaloderma_vittatum_Jarvis
+MVKLGSNLSDKSSKQPPNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKGAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[7] Aptenodytes_forsteri_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[8] Apteryx_australis_protein
+VTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGR
+FYTVISHYSMAKQTSSRSVSPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+[9] Aquila_chrysaetos_protein
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[10] Balearica_regulorum_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[11] Buceros_rhinoceros_Jarvis
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[12] Calidris_pugnax_protein
+MVKLGSNLNDKNSKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWMSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[13] Calypte_anna_Jarvis
+MVKLGSNLNDKNNKAPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSSSRGRFYTVISHYSMAKQSSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[14] Cariama_cristata_Jarvis
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRALSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[15] Cathartes_aura_Jarvis
+VTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGR
+FYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+[16] Chaetura_pelagica_Jarvis
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[17] Charadrius_vociferus_Jarvis
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[18] Chlamydotis_macqueenii_Jarvis
+VTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGR
+FYTVISHYSMAKQTSSRAVSPWLSSGSANHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+[19] Colius_striatus_Jarvis
+MVKLGSNLNDKNSKQPSTEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTV
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------------------------------
+[20] Columba_livia_Jarvis
+MVKLGSNLNDKNNKQPSTEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGAVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[21] Corvus_brachyrhynchos_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPLLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[22] Corvus_cornix_protein
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[23] Coturnix_japonica_protein
+MVKLGSNLNDKNSKPPSSEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[24] Cuculus_canorus_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[25] Egretta_garzetta_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEGKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[26] Eurypyga_helias_Jarvis
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[27] Falco_cherrug_protein
+MVKLGSNLNDKNNKPPSTEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[28] Falco_peregrinus_Jarvis
+MVKLGSNLNDKNNKPPSTEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[29] Ficedula_albicollis_protein
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDSKAAKT
+DGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[30] Fulmarus_glacialis_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTV
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------------------------------
+[31] Gallus_gallus_Jarvis
+MVKLGSNLNDKNSKPPSSEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILVSLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHETKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[32] Gavia_stellata_Jarvis
+MVKLGSNLNDKNNKQPSAEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTV
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------------------------------
+[33] Geospiza_fortis_Jarvis
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[34] Haliaeetus_albicilla_Jarvis
+VTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGR
+FYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+[35] Haliaeetus_leucocephalus_Jarvis
+QVIVKTRTEYQPDQKNKGKLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLV
+VYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAV
+SPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------
+[36] Lepidothrix_coronata_protein
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWMSSGSANHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[37] Leptosomus_discolor_Jarvis
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTV
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------------------------------
+[38] Manacus_vitellinus_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWMSSGSANHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[39] Melopsittacus_undulatus_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[40] Merops_nubicus_Jarvis
+VIVKTRTEYQPDQKNKGKLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVV
+YKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVS
+PWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-----------------------------------
+[41] Mesitornis_unicolor_Jarvis
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[42] Nestor_notabilis_Jarvis
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[43] Nipponia_nippon_Jarvis
+MVKLGSNLNDKNNKQPSSEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[44] Opisthocomus_hoazin_Jarvis
+MVKLGSNLNDKTSKQPSSEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[45] Parus_major_protein
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[46] Pelecanus_crispus_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTV
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-------------------------------------------
+[47] Phaethon_lepturus_Jarvis
+QVIVKTRTEYQPDQKNKGKLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLV
+VYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAV
+SPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------
+[48] Phalacrocorax_carbo_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[49] Phoenicopterus_ruber_Jarvis
+VTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGR
+FYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+[50] Picoides_pubescens_Jarvis
+MVKLGSNLNDKNSKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSANHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[51] Podiceps_cristatus_Jarvis
+VTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGR
+FYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+---------------
+[52] Pseudopodoces_humilis_protein
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[53] Pterocles_gutturalis_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[54] Pygoscelis_adeliae_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[55] Serinus_canaria_protein
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGXXXXXXXHDNK
+AAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------
+[56] Struthio_camelus_Jarvis
+MVKLGSNLNDKNNKQPSSEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRSVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[57] Sturnus_vulgaris_protein
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[58] Taeniopygia_guttata_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVPWLPSGSASHDNKAAKTE
+GH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+-----------------------------------------------------
+[59] Tauraco_erythrolophus_Jarvis
+MVKLGSNLNDKNNKQPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[60] Tinamus_guttatus_Jarvis
+MVKLGSNLNDKSNKQPSSEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRSVSPWLSSGSVNHEAKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+[61] Tyto_alba_Jarvis
+QVIVKTRTEYQPDQKNKGKLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLV
+VYKAFTYDHSCPDGFVYKHKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAV
+SPWLSSGSVNHEAKSAKTEGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------
+[62] Zonotrichia_albicollis_protein
+MVKLGSNLNDKNNKPPSNEDGFQTVPLITPLEVNHLQFPAPEKVIVKTRTEYQPDQKNKG
+KLRVPKIAEFTVSFTDGVTERLKVTILISLALAFLACIVFLVVYKAFTYDHSCPDGFVYK
+HKRCIPASLDAYYSAQDSNSRGRFYTVISHYSMAKQTSSRAVSPWLPSGSASHDNKAAKT
+EGH
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------------------------------
+;
+END;
