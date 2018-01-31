@@ -11,6 +11,9 @@ The next generation of [**bioinfor**](https://github.com/dongzhuoer/bioinfor)
 
 `fasta_to_nexus()` transform that named vector to nexus format.
 
+## to do
+
+add more test for read-fasta (unalign)
 
 ## License
 

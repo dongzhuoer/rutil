@@ -1,5 +1,3 @@
-#' @import magrittr
-#' @import stringr
-#'
+#' @importFrom magrittr %>%
 #'
 NULL
