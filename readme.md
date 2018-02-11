@@ -1,5 +1,8 @@
 # biozhuoer
 
+[![Build Status](https://travis-ci.com/dongzhuoer/biozhuoer.svg?branch=master)](https://travis-ci.com/dongzhuoer/biozhuoer)
+
+Some utility functions in bioinformatics
 ## Overview
 
 Some utility functions in bioinformatics, still in developing, use at your own risks.
