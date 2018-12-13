@@ -20,8 +20,8 @@ result of \code{\link[=system2]{system2()}}
 wrapper to run Alicut
 }
 \examples{
-\\donotrun {
-    aliscore('-i data-raw/aliscore/test.fasta');
+\dontrun{
+    aliscore('-i data-raw/aliscore/test.fasta')
     alicut('data-raw/aliscore', args = '-s')
 }
 }

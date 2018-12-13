@@ -19,22 +19,22 @@ span multiple lines. Specify \code{FALSE} if not sure, refer to \strong{Details}
 tibble
 \itemize{
 \item name: character. sequence header (without '>')
-\item seq:  character. sequence itself, I named it \code{seq} instead of \code{sequence}
-to save 62.5% of time (and everyone using R should take it for granted that
-seq means sequence)
+\item seq:  character. sequence itself, I named it \code{seq} instead of \code{sequence} to
+save 62.5% of time (and everyone using R should take it for granted that seq
+means sequence)
 }
 }
 \description{
-\code{read_fasta()} reads all sequences contained in a fasta file into
-a tibble (see \strong{Value}). See \emph{FASTA format} for the requirements of input
-file.
+\code{read_fasta()} reads all sequences contained in a fasta file
+into a tibble (see \strong{Value}). See \emph{FASTA format} for the requirements of
+input file.
 }
 \details{
 Previously, I implemented fasta as a named character (in
 \code{\link[bioinfor:read_fasta]{bioinfor::read_fasta()}}). But I found it more and more inconvenient as I
 used it. Many times when you manipulate the character, the name got lost.
-Finally, I decided to reimplement it as a tibble. That why this package come
-into being.
+Finally, I decided to reimplement it as a tibble. That why this package
+come into being.
 
 Actually, \code{file} can be anything as long as it's recognized by
 \code{\link[readr:read_lines]{readr::read_lines()}}.
@@ -57,9 +57,9 @@ many '-'s, implement \emph{unalign} (\code{\link[stringr:str_replace_all]{string
 sequences (can use any character except for '>', at least at the begining)
 and their headers (begin with '>', one line). Comments are not supported.
 
-Basically, \code{c('&gt;na', 'me', 'ATCG')} (name span two lines) and \code{c('&gt;name', '&gt;ATCG')} (sequence begins with '>') are most common (and maybe the only)
-errors. Expect that, almost anything is acceptable (though your file may not
-be recongnized by other program):
+Basically, \code{c('>na', 'me', 'ATCG')} (name span two lines) and \code{c('>name', '>ATCG')} (sequence begins with '>') are most common (and maybe the only)
+errors. Expect that, almost anything is acceptable (though your file may
+not be recongnized by other program):
 \enumerate{
 \item name contains '>', see crazy example 1.
 \item sequence contains '>' (can't be at the begining), see crazy example 2.
@@ -67,14 +67,14 @@ be recongnized by other program):
 \item empty sequence, see crazy example 4. But it must occupy an empty line if
 you want to scape check for \code{pre_line} (refer to details).
 \item very long name, see crazy example 5. It can contain thousands of
-thousands characters, so long as you have enough memory (and disk if you are
-really mad).
+thousands characters, so long as you have enough memory (and disk if you
+are really mad).
 \item don't you think the above is enough? We can't make friends anymore.
 (Never tell me you have tried crazy example 6)
 }
 
-In most situations, you won't have a file like that, unless you deliberately
-create one.
+In most situations, you won't have a file like that, unless you
+deliberately create one.
 }
 
 \section{Test files}{
@@ -87,18 +87,25 @@ create one.
 }
 
 \examples{
-{
-    read_fasta('data-raw/example.fasta');
-    read_fasta('data-raw/aligned-multiline.fasta');
-    read_fasta('data-raw/aligned-multiline.fasta', unalign = TRUE);
+system.file('extdata', 'example.fasta', package = 'biozhuoer') \%>\% read_fasta();
 
-    # crazy examples
-    read_fasta('>na>me\\nATCG');
-    read_fasta('>name\\nAT>CG');
-    read_fasta('>\\nATCG');
-    read_fasta('>name\\n')
-    read_fasta(paste0(c('>', rep('x', 10000), '\\nATCG'), collapse = ''));
-    tempfile() \%T>\% readr::write_file('>name', .)  \%T>\% readr::read_file() \%>\% read_fasta;
-}
+system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') \%>\% read_fasta();
+
+system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') \%>\% read_fasta(unalign = TRUE);
+
+
+# crazy examples
+read_fasta('>na>me\\nATCG');
+
+read_fasta('>name\\nAT>CG');
+
+read_fasta('>\\nATCG');
+
+read_fasta('>name\\n')
+
+read_fasta(paste0(c('>', rep('x', 10000), '\\nATCG'), collapse = ''));
+
+tempfile() \%T>\% readr::write_file('>name', .)  \%T>\% readr::read_file() \%>\% read_fasta;
+
 
 }

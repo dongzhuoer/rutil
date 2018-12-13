@@ -21,8 +21,9 @@ overwrite
 }
 \examples{
 {
-    write_fasta(read_fasta('data-raw/example.fasta'), 'data-raw/example-out.fasta')
-    system('md5sum data-raw/example*.fasta')
+    input_file  <- system.file('extdata', 'example.fasta', package = 'biozhuoer')
+    output_file <- tempfile();
+    write_fasta(read_fasta(input_file), output_file)
 }
 
 }

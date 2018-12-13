@@ -1,0 +1,34 @@
+---
+title: processing raw data to package data
+---
+
+# preparation
+
+```{r include=FALSE}
+assertthat::assert_that(
+    knitr::current_input() %>% paste0('R-raw/', .) %>% file.exists(),
+    msg = 'Please set knitr root directory to project directory! You may try running `rmarkdown::render("data-raw/data.Rmd")` at project directory or clicking `Knit` button on the top of this document in RStudio.'
+)
+```
+
+```{r clean, include=FALSE}
+dir('data', full.names = T) %>% file.remove()
+rm(list = ls(envir = globalenv(), all = T))
+```
+
+# Process raw data
+
+
+# Afterward
+
+```{r reinstall}
+devtools::test()     # test the new data
+roxygen2::roxygenize() # you may also have edited data documentation
+
+system('R CMD INSTALL --no-multiarch --with-keep.source .')
+devtools::reload()   # now you can use the new data in current R session 
+```
+
+
+
+

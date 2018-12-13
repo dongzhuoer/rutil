@@ -2,20 +2,51 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
+    "type": "shell",
+    "problemMatcher": [],
     "tasks": [
         {
-            "label": "build",
-            "type": "shell",
-            "command": "R -e \"devtools::document(roclets = c('rd', 'collate', 'namespace', 'vignette'))\"; R CMD INSTALL --no-multiarch --with-keep.source .",
-
-            "presentation": {
-                "reveal": "never"
+            "label": "document",
+            "command": "R --slave -e 'roxygen2::roxygenize()'",
+        },
+        {
+            "label": "test",
+            "command": "R --slave -e \"pkgload::load_all(); testthat::test_dir('tests/testthat/')\"",
+            // actually it's not required, I add it here since if build depends on both document and test, they will show in two separate terminals
+            "dependsOn": [
+                "document"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
             },
+        },
+        {
+            "label": "build",
+            "command": "R CMD INSTALL --no-multiarch --with-keep.source .",
+            "dependsOn": [
+                "test"
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
-        }
-        
+            },
+        },
+        {
+            "label": "data",
+            "command": "R -e \"rmarkdown::render('R-raw/data.Rmd')\"",
+        },
+        {
+            "label": "vignettes",
+            "command": "R -e \"rmarkdown::render('R-raw/vignettes.Rmd')\"",
+        },
+        {
+            "label": "pkgdown",
+            "command": "R -e 'pkgdown::build_site()'",
+            "problemMatcher": [],
+            "dependsOn": [
+                "document"
+            ]
+        },
     ]
 }

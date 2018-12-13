@@ -1,27 +1,31 @@
-language: r
-os: [linux, osx]
-r: [release, devel, oldrel]
-matrix:
-  fast_finish: true
-  allow_failures:
-  - r: devel
-  - r: oldrel
-cache: packages
-latex: false
-pandoc: false
-fortran: true
+dist: xenial
+language: generic
+services: docker
+cache: 
+  directories: $HOME/.local/lib/R/
+env:
+  global:
+    - system_dep=""
+  matrix:
+    - job=build  
+    - job=test
 git:
   depth: false
 
 before_install:
-  - R -e "if (Sys.getenv('TRAVIS_EVENT_TYPE') == 'cron') unlink(dir(.libPaths()[1], full.names = T), recursive = T)"
-  - R --slave -e "source('https://gist.github.com/dongzhuoer/dd332dc13ef06ee4447f69aaacbdcb1a/raw/move-recommended-packages-to-user-library-for-travis.R')"
-  - R --slave -e "update.packages(ask = F)"
-install:
-  - R --slave -e "if (!('devtools' %in% .packages(T))) install.packages('devtools')"
+  - if [ "$job" == "build" ]; then export tag=remotes; else export tag=deverse; fi;
+install: 
+  - docker run -dt -u `id -u`:`id -g` -v $TRAVIS_BUILD_DIR:$HOME/$TRAVIS_REPO_SLUG -w $HOME/$TRAVIS_REPO_SLUG -v $HOME/.local/lib/R:$HOME/.local/lib/R -e CI=true --name rlang0 dongzhuoer/rlang:$tag 2> /dev/null
+  # add user & group (assuming the image contains no user)
+  - docker exec -u root rlang0 groupadd `id -gn` -g `id -g`
+  - docker exec -u root rlang0 useradd $USER -u `id -u` -g `id -g`
+  # install system dependency
+  - docker exec -u root rlang0 bash -c "apt update && apt -y install $system_dep"
 script:
-  - R --slave -e "devtools::install_local(getwd())"
-  - R --slave -e "devtools::update_packages(c('testthat', 'roxygen2')); devtools::load_all(); if (dir.exists('tests/testthat')) {devtools::test(); testthat::test_dir('tests/testthat/', reporter = 'fail')}"
+  - if [ "$job" == "build" ]; then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT'); remotes::install_local(force = TRUE, upgrade = TRUE)"; fi;
+  
+  - if [ "$job" == "test" ];  then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT');  remotes::install_deps(force = TRUE, upgrade = TRUE, dependencies = TRUE)"; fi;
+  - if [ "$job" == "test" ];  then docker exec rlang0 R --slave -e "pkgload::load_all(); testthat::test_dir('tests/testthat/'); testthat::test_dir('tests/testthat/', reporter = 'fail')"; fi; # default reports summary result, fail exit no-zero when a test fails
 
 notifications:
   email: false

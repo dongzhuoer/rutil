@@ -1,98 +1,107 @@
 
 
-#'@title Read sequences from a fasta file.
+#' @title Read sequences from a fasta file.
 #'
-#'@description `read_fasta()` reads all sequences contained in a fasta file into
-#'  a tibble (see **Value**). See _FASTA format_ for the requirements of input
-#'  file.
+#' @description `read_fasta()` reads all sequences contained in a fasta file
+#'   into a tibble (see **Value**). See _FASTA format_ for the requirements of
+#'   input file.
 #'
-#'@details Previously, I implemented fasta as a named character (in
-#'  [bioinfor::read_fasta()]). But I found it more and more inconvenient as I
-#'  used it. Many times when you manipulate the character, the name got lost.
-#'  Finally, I decided to reimplement it as a tibble. That why this package come
-#'  into being.
+#' @details Previously, I implemented fasta as a named character (in
+#'   [bioinfor::read_fasta()]). But I found it more and more inconvenient as I
+#'   used it. Many times when you manipulate the character, the name got lost.
+#'   Finally, I decided to reimplement it as a tibble. That why this package
+#'   come into being.
 #'
-#'  Actually, `file` can be anything as long as it's recognized by
-#'  [readr::read_lines()].
+#'   Actually, `file` can be anything as long as it's recognized by
+#'   [readr::read_lines()].
 #'
-#'  If `per_line` isn't `TRUE`, `read_fasta()` will check it by detecting '>'
-#'  and count line number. This (implemented by [stringr::str_detect()]) takes
-#'  almost the same time as reading file content (implemented by
-#'  [readr::read_lines()]). So specify `TRUE` if you are sure to save time. But
-#'  this checking doesn't waste any time when sequences indeed span multiple
-#'  lines. Additionly, a file contains odd number of lines will cause
-#'  `pre_line=TURE` to be ignored
+#'   If `per_line` isn't `TRUE`, `read_fasta()` will check it by detecting '>'
+#'   and count line number. This (implemented by [stringr::str_detect()]) takes
+#'   almost the same time as reading file content (implemented by
+#'   [readr::read_lines()]). So specify `TRUE` if you are sure to save time. But
+#'   this checking doesn't waste any time when sequences indeed span multiple
+#'   lines. Additionly, a file contains odd number of lines will cause
+#'   `pre_line=TURE` to be ignored
 #'
-#'  For `unalign`, when deal with large aligned file with linebreak containing
-#'  many '-'s, implement _unalign_ ([stringr::str_replace_all()] in
-#'  [read_fasta()]) is about 15% faster than do that externally, i.e. after
-#'  [read_fasta()] returns.
+#'   For `unalign`, when deal with large aligned file with linebreak containing
+#'   many '-'s, implement _unalign_ ([stringr::str_replace_all()] in
+#'   [read_fasta()]) is about 15% faster than do that externally, i.e. after
+#'   [read_fasta()] returns.
 #'
-#'@param file string. Path to the fasta file.
-#'@param per_line logical scalar. Whether sequences keep in one line or might
-#'  span multiple lines. Specify `FALSE` if not sure, refer to **Details**.
-#'@param unalign logical scalar. Whether unalign aligned sequences, i.e. remove
-#'  '-', see **Details**.
+#' @param file string. Path to the fasta file.
+#' @param per_line logical scalar. Whether sequences keep in one line or might
+#'   span multiple lines. Specify `FALSE` if not sure, refer to **Details**.
+#' @param unalign logical scalar. Whether unalign aligned sequences, i.e. remove
+#'   '-', see **Details**.
 #'
-#'@return tibble
+#' @return tibble
 #'
-#'  - name: character. sequence header (without '>')
+#' - name: character. sequence header (without '>')
 #'
-#'  - seq:  character. sequence itself, I named it `seq` instead of `sequence`
-#'  to save 62.5% of time (and everyone using R should take it for granted that
-#'  seq means sequence)
+#' - seq:  character. sequence itself, I named it `seq` instead of `sequence` to
+#' save 62.5% of time (and everyone using R should take it for granted that seq
+#' means sequence)
 #'
-#'@export
 #'
-#' @examples {
-#'     read_fasta('data-raw/example.fasta');
-#'     read_fasta('data-raw/aligned-multiline.fasta');
-#'     read_fasta('data-raw/aligned-multiline.fasta', unalign = TRUE);
+#' @examples
+#' system.file('extdata', 'example.fasta', package = 'biozhuoer') %>% read_fasta();
 #'
-#'     # crazy examples
-#'     read_fasta('>na>me\nATCG');
-#'     read_fasta('>name\nAT>CG');
-#'     read_fasta('>\nATCG');
-#'     read_fasta('>name\n')
-#'     read_fasta(paste0(c('>', rep('x', 10000), '\nATCG'), collapse = ''));
-#'     tempfile() %T>% readr::write_file('>name', .)  %T>% readr::read_file() %>% read_fasta;
-#' }
+#' system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') %>% read_fasta();
 #'
-#'@section FASTA format: The minimum requirement is that it can only contain
-#'  sequences (can use any character except for '>', at least at the begining)
-#'  and their headers (begin with '>', one line). Comments are not supported.
+#' system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') %>% read_fasta(unalign = TRUE);
 #'
-#'  Basically, `c('>na', 'me', 'ATCG')` (name span two lines) and `c('>name',
-#'  '>ATCG')` (sequence begins with '>') are most common (and maybe the only)
-#'  errors. Expect that, almost anything is acceptable (though your file may not
-#'  be recongnized by other program):
 #'
-#'  1. name contains '>', see crazy example 1.
+#' # crazy examples
+#' read_fasta('>na>me\nATCG');
 #'
-#'  2. sequence contains '>' (can't be at the begining), see crazy example 2.
+#' read_fasta('>name\nAT>CG');
 #'
-#'  3. empty name, see crazy example 3.
+#' read_fasta('>\nATCG');
 #'
-#'  4. empty sequence, see crazy example 4. But it must occupy an empty line if
-#'  you want to scape check for `pre_line` (refer to details).
+#' read_fasta('>name\n')
 #'
-#'  5. very long name, see crazy example 5. It can contain thousands of
-#'  thousands characters, so long as you have enough memory (and disk if you are
-#'  really mad).
+#' read_fasta(paste0(c('>', rep('x', 10000), '\nATCG'), collapse = ''));
 #'
-#'  6. don't you think the above is enough? We can't make friends anymore.
-#'  (Never tell me you have tried crazy example 6)
+#' tempfile() %T>% readr::write_file('>name', .)  %T>% readr::read_file() %>% read_fasta;
 #'
-#'  In most situations, you won't have a file like that, unless you deliberately
-#'  create one.
 #'
-#'@section Test files:
+#' @section FASTA format: The minimum requirement is that it can only contain
+#'   sequences (can use any character except for '>', at least at the begining)
+#'   and their headers (begin with '>', one line). Comments are not supported.
 #'
-#'  1. test1.fasta big file with linebreak.
+#'   Basically, `c('>na', 'me', 'ATCG')` (name span two lines) and `c('>name',
+#'   '>ATCG')` (sequence begins with '>') are most common (and maybe the only)
+#'   errors. Expect that, almost anything is acceptable (though your file may
+#'   not be recongnized by other program):
 #'
-#'  1. test12.fasta same file without.
+#'   1. name contains '>', see crazy example 1.
 #'
-#'  1. test2.fasta big aligned file with linebreak.
+#'   2. sequence contains '>' (can't be at the begining), see crazy example 2.
+#'
+#'   3. empty name, see crazy example 3.
+#'
+#'   4. empty sequence, see crazy example 4. But it must occupy an empty line if
+#'   you want to scape check for `pre_line` (refer to details).
+#'
+#'   5. very long name, see crazy example 5. It can contain thousands of
+#'   thousands characters, so long as you have enough memory (and disk if you
+#'   are really mad).
+#'
+#'   6. don't you think the above is enough? We can't make friends anymore.
+#'   (Never tell me you have tried crazy example 6)
+#'
+#'   In most situations, you won't have a file like that, unless you
+#'   deliberately create one.
+#'
+#' @section Test files:
+#'
+#'   1. test1.fasta big file with linebreak.
+#'
+#'   1. test12.fasta same file without.
+#'
+#'   1. test2.fasta big aligned file with linebreak.
+#'
+#' @export
 #'
 read_fasta <- function(file, per_line = FALSE, unalign = FALSE) {
 	#file  = 'data-raw/test.fasta';
@@ -142,9 +151,11 @@ read_fasta <- function(file, per_line = FALSE, unalign = FALSE) {
 #'
 #' @return the input invisibly
 #'
-#' @examples {
-#'     write_fasta(read_fasta('data-raw/example.fasta'), 'data-raw/example-out.fasta')
-#'     system('md5sum data-raw/example*.fasta')
+#' @examples
+#' {
+#'     input_file  <- system.file('extdata', 'example.fasta', package = 'biozhuoer')
+#'     output_file <- tempfile();
+#'     write_fasta(read_fasta(input_file), output_file)
 #' }
 #'
 #' @export

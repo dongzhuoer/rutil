@@ -21,7 +21,7 @@ wrapper to run Aliscore
 aliscore will produce several files under the directory containg input files
 }
 \examples{
-\\donotrun {
+\dontrun{
     aliscore('-i data-raw/aliscore/test.fasta')
 }
 }

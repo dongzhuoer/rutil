@@ -1,0 +1,18 @@
+---
+title: "Introduction to biozhuoer"
+author: "Zhuoer Dong"
+date: "`r Sys.Date()`"
+output: prettydoc::html_pretty
+vignette: >
+  %\VignetteIndexEntry{Introduction to biozhuoer}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+`read_fasta()`/`write_fasta()` can read/write FASTA format file into/from named character. If you feel frustrate with DNAbin or other stophisticated class, and find youself using `read/write_line` and `str_extract/replace/...` repeatedly, may be you can consider this package.
+
+`fasta_to_nexus()` transform that named vector to nexus format.

@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples
-#' \donotrun {
+#' \dontrun{
 #'     aliscore('-i data-raw/aliscore/test.fasta')
 #' }
 aliscore <- function(args, ...) {
@@ -29,8 +29,8 @@ aliscore <- function(args, ...) {
 #' @export
 #'
 #' @examples
-#' \donotrun {
-#'     aliscore('-i data-raw/aliscore/test.fasta');
+#' \dontrun{
+#'     aliscore('-i data-raw/aliscore/test.fasta')
 #'     alicut('data-raw/aliscore', args = '-s')
 #' }
 alicut <- function(dir, ...) {
