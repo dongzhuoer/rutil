@@ -43,10 +43,6 @@
         {
             "label": "pkgdown",
             "command": "R -e 'pkgdown::build_site()'",
-            "problemMatcher": [],
-            "dependsOn": [
-                "document"
-            ]
         },
     ]
 }
