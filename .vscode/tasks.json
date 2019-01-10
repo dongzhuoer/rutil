@@ -7,25 +7,25 @@
     "tasks": [
         {
             "label": "document",
-            "command": "R --slave -e 'roxygen2::roxygenize()'",
+            "command": "R --slave -e 'Rcpp::compileAttributes(); roxygen2::roxygenize()'",
         },
         {
-            "label": "test",
-            "command": "R --slave -e \"pkgload::load_all(); testthat::test_dir('tests/testthat/')\"",
-            // actually it's not required, I add it here since if build depends on both document and test, they will show in two separate terminals
-            "dependsOn": [
-                "document"
-            ],
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
+            "label": "pkgdown",
+            "command": "R --slave -e 'pkgdown::build_site()'",
+        },
+        {
+            "label": "vignettes",
+            "command": "R --slave -e \"rmarkdown::render('R-raw/vignettes.Rmd')\"",
+        },
+        {
+            "label": "data",
+            "command": "R --slave -e \"rmarkdown::render('R-raw/data.Rmd')\"",
         },
         {
             "label": "build",
             "command": "R CMD INSTALL --no-multiarch --with-keep.source .",
             "dependsOn": [
-                "test"
+                "document"
             ],
             "group": {
                 "kind": "build",
@@ -33,16 +33,12 @@
             },
         },
         {
-            "label": "data",
-            "command": "R -e \"rmarkdown::render('R-raw/data.Rmd')\"",
-        },
-        {
-            "label": "vignettes",
-            "command": "R -e \"rmarkdown::render('R-raw/vignettes.Rmd')\"",
-        },
-        {
-            "label": "pkgdown",
-            "command": "R -e 'pkgdown::build_site()'",
+            "label": "test",
+            "command": "R --slave -e \"pkgload::load_all(); testthat::test_dir('tests/testthat/')\"",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
         },
     ]
 }
