@@ -19,3 +19,4 @@ refer to `vignette('biozhuoer')`.
 ## to do
 
 1. add more test for read-fasta (unalign)
+1. move `read_sam()`, `read_bed()`, etc from paristools to here.
