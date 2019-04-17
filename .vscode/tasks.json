@@ -4,14 +4,25 @@
     "version": "2.0.0",
     "type": "shell",
     "problemMatcher": [],
+    "presentation": {
+        "reveal": "silent",
+    },
     "tasks": [
+        {
+            "label": "view GitHub",
+            "command": "google-chrome https://github.com/dongzhuoer/${workspaceFolderBasename} 2> /dev/null",
+        },
+        {
+            "label": "view local pkgdown",
+            "command": "google-chrome docs/index.html 2> /dev/null",
+        },
+        {
+            "label": "view online pkgdown",
+            "command": "google-chrome https://dongzhuoer.github.io/${workspaceFolderBasename} 2> /dev/null",
+        },
         {
             "label": "document",
             "command": "R --slave -e 'Rcpp::compileAttributes(); roxygen2::roxygenize()'",
-        },
-        {
-            "label": "pkgdown",
-            "command": "R --slave -e 'pkgdown::build_site()'",
         },
         {
             "label": "vignettes",
@@ -20,6 +31,13 @@
         {
             "label": "data",
             "command": "R --slave -e \"rmarkdown::render('R-raw/data.Rmd')\"",
+        },
+        {
+            "label": "pkgdown",
+            "command": "R --slave -e 'pkgdown::build_site()'",
+            "dependsOn": [
+                "document"
+            ],
         },
         {
             "label": "build",
