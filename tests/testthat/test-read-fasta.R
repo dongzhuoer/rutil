@@ -1,5 +1,5 @@
 testthat::context("Testing read-fasta")
-if (basename(getwd()) == 'testthat') setwd('../..')  # workspace is reset per file
+setwd(here::here(''))  # workspace is reset per file
 
 
 testthat::test_that("Testing read_fasta", {
