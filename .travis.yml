@@ -1,19 +1,17 @@
+# to make a universe .travis.yml, I move env $system_dep to repository settings
 dist: xenial
 language: generic
 services: docker
 cache: 
   directories: $HOME/.local/lib/R/
 env:
-  global:
-    - system_dep=""
   matrix:
     - job=build  
     - job=test
-git:
-  depth: false
+    - job=pkgdown
 
 before_install:
-  - if [ "$job" == "build" ]; then export tag=remotes; else export tag=deverse; fi;
+  - if [ "$job" == "build" ]; then export tag=remotes; else if [ "$job" == "test" ]; then export tag=deverse; else export tag=pkgdown; fi; fi;
 install: 
   - docker run -dt -u `id -u`:`id -g` -v $TRAVIS_BUILD_DIR:$HOME/$TRAVIS_REPO_SLUG -w $HOME/$TRAVIS_REPO_SLUG -v $HOME/.local/lib/R:$HOME/.local/lib/R -e CI=true --name rlang0 dongzhuoer/rlang:$tag 2> /dev/null
   # add user & group (assuming the image contains no user)
@@ -22,10 +20,15 @@ install:
   # install system dependency
   - docker exec -u root rlang0 bash -c "apt update && apt -y install $system_dep"
 script:
-  - if [ "$job" == "build" ]; then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT'); remotes::install_local(force = TRUE, upgrade = TRUE)"; fi;
+  - if [ "$job" == "build" ];   then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT'); remotes::install_local(force = TRUE, upgrade = TRUE)"; fi;
+  - if [ "$job" == "test" ];    then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT'); remotes::install_deps(force = TRUE,  upgrade = TRUE, dependencies = TRUE)"; fi;
+  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT'); remotes::install_local(force = TRUE, upgrade = TRUE, dependencies = TRUE)"; fi;
   
-  - if [ "$job" == "test" ];  then docker exec rlang0 R --slave -e "Sys.setenv('GITHUB_PAT' = '$GITHUB_PAT');  remotes::install_deps(force = TRUE, upgrade = TRUE, dependencies = TRUE)"; fi;
-  - if [ "$job" == "test" ];  then docker exec rlang0 R --slave -e "pkgload::load_all(); testthat::test_dir('tests/testthat/'); testthat::test_dir('tests/testthat/', reporter = 'fail')"; fi; # default reports summary result, fail exit no-zero when a test fails
+  - if [ "$job" == "test" ]; then docker exec rlang0 R --slave -e "pkgload::load_all(); testthat::test_dir('tests/testthat/'); testthat::test_dir('tests/testthat/', reporter = 'fail')"; fi; # default reports summary result, fail exit no-zero when a test fails
+ 
+  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 R --slave -e "if (file.exists('src/Makevars')) Rcpp::compileAttributes(); roxygen2::roxygenize(); pkgdown::build_site()"; fi;
+  - if [ "$job" == "pkgdown" ]; then git clone --depth 1 -b gh-pages https://$GITHUB_PAT@github.com/$TRAVIS_REPO_SLUG.git $HOME/gh-pages && mv $HOME/gh-pages/.git pkgdown; fi;
+  - if [ "$job" == "pkgdown" ]; then cd pkgdown && rm .gitignore && git add --all && git commit -m "[skip ci] build pkgdown at `date '+%Y-%m-%d %H:%M:%S'`" --allow-empty && git push -f && cd ..; fi;
 
 notifications:
   email: false

@@ -1,9 +1,0 @@
-pandoc: '2.5'
-pkgdown: 1.3.0.9000
-pkgdown_sha: ~
-articles:
-  biozhuoer: biozhuoer.html
-urls:
-  reference: https://dongzhuoer.github.io/biozhuoer/reference
-  article: https://dongzhuoer.github.io/biozhuoer/articles
-

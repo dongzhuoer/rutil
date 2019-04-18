@@ -17,4 +17,6 @@ Imports: magrittr,
     tibble,
     readr,
     dplyr
+Suggests:
+    prettydoc
 VignetteBuilder: knitr, rmarkdown

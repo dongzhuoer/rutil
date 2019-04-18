@@ -14,7 +14,7 @@
         },
         {
             "label": "view local pkgdown",
-            "command": "google-chrome docs/index.html 2> /dev/null",
+            "command": "google-chrome pkgdown/index.html 2> /dev/null",
         },
         {
             "label": "view online pkgdown",
