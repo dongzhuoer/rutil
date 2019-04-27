@@ -5,10 +5,9 @@ services: docker
 cache: 
   directories: $HOME/.local/lib/R/
 env:
-  matrix:
-    - job=build  
-    - job=test
-    - job=pkgdown
+  - job=build  
+  - job=test
+  - job=pkgdown
 
 before_install:
   - if [ "$job" == "build" ]; then export tag=remotes; else if [ "$job" == "test" ]; then export tag=deverse; else export tag=pkgdown; fi; fi;
