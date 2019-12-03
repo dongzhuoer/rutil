@@ -1,5 +1,5 @@
 # to make a universe .travis.yml, I move env $system_dep to repository settings
-dist: xenial
+dist: bionic
 language: minimal
 git:
   depth: false
