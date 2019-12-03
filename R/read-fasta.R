@@ -131,7 +131,7 @@ read_fasta <- function(file, per_line = FALSE, unalign = FALSE) {
 	}
 
 	name %<>% stringr::str_replace('^>', '');
-	tibble::data_frame(name, seq);
+	tibble::tibble(name, seq);
 }
 
 #Rprof(interval = 0.0002);read_fasta('data-raw/test12.fasta', F);Rprof(NULL);summaryRprof()
