@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dongzhuoer.github.io/biozhuoer/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/biozhuoer/reference/pkg_file.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/biozhuoer/reference/read_fasta.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/biozhuoer/reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/biozhuoer/reference/write_fasta.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/biozhuoer/articles/biozhuoer.html</loc>
+  </url>
+</urlset>
