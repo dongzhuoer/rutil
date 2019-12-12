@@ -22,19 +22,19 @@
         },
         {
             "label": "document",
-            "command": "R --slave -e 'Rcpp::compileAttributes(); roxygen2::roxygenize()'",
+            "command": "Rscript -e 'Rcpp::compileAttributes(); roxygen2::roxygenize()'",
         },
         {
             "label": "vignettes",
-            "command": "R --slave -e \"rmarkdown::render('R-raw/vignettes.Rmd')\"",
+            "command": "Rscript -e \"rmarkdown::render('R-raw/vignettes.Rmd')\"",
         },
         {
             "label": "data",
-            "command": "R --slave -e \"rmarkdown::render('R-raw/data.Rmd')\"",
+            "command": "Rscript -e \"rmarkdown::render('R-raw/data.Rmd')\"",
         },
         {
             "label": "pkgdown",
-            "command": "R --slave -e 'pkgdown::build_site()'",
+            "command": "Rscript -e 'pkgdown::build_site()'",
             "dependsOn": [
                 "document"
             ],
@@ -52,7 +52,7 @@
         },
         {
             "label": "test",
-            "command": "R --slave -e \"pkgload::load_all(); testthat::test_dir('tests/testthat/')\"",
+            "command": "Rscript -e \"pkgload::load_all(); testthat::test_dir('tests/testthat/')\"",
             "group": {
                 "kind": "test",
                 "isDefault": true

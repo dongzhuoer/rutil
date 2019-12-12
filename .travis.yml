@@ -23,13 +23,13 @@ install:
   - docker exec -u root rlang0 bash -c "apt update && apt -y install $system_dep"
 script:
   # build
-  - if [ "$job" == "build" ];   then docker exec rlang0 R --slave -e "remotes::install_local(force = TRUE, upgrade = TRUE)"; fi;
+  - if [ "$job" == "build" ];   then docker exec rlang0 Rscript -e "remotes::install_local(force = TRUE, upgrade = TRUE)"; fi;
   # testthat
-  - if [ "$job" == "test" ];    then docker exec rlang0 R --slave -e "remotes::install_deps(force = TRUE,  upgrade = TRUE, dependencies = TRUE)"; fi;
-  - if [ "$job" == "test" ]; then docker exec rlang0 R --slave -e "pkgload::load_all(); testthat::test_dir('tests/testthat/'); testthat::test_dir('tests/testthat/', reporter = 'fail')"; fi; # default reports summary result, fail exit no-zero when a test fails
+  - if [ "$job" == "test" ];    then docker exec rlang0 Rscript -e "remotes::install_deps(force = TRUE,  upgrade = TRUE, dependencies = TRUE)"; fi;
+  - if [ "$job" == "test" ]; then docker exec rlang0 Rscript -e "pkgload::load_all(); testthat::test_dir('tests/testthat/'); testthat::test_dir('tests/testthat/', reporter = 'fail')"; fi; # default reports summary result, fail exit no-zero when a test fails
   # pkgdown and deploy to GitHub Pages
-  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 R --slave -e "remotes::install_local(force = TRUE, upgrade = TRUE, dependencies = TRUE)"; fi;
-  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 R --slave -e "pkgdown::build_site()"; fi;
+  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 Rscript -e "remotes::install_local(force = TRUE, upgrade = TRUE, dependencies = TRUE)"; fi;
+  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 Rscript -e "pkgdown::build_site()"; fi;
   - if [ "$job" == "pkgdown" ]; then git clone --depth 1 -b gh-pages https://$GITHUB_PAT@github.com/$TRAVIS_REPO_SLUG.git $HOME/gh-pages && mv $HOME/gh-pages/.git pkgdown; fi;
   - if [ "$job" == "pkgdown" ]; then cd pkgdown && rm .gitignore && git add --all && git commit -m "[skip ci] build pkgdown at `date '+%Y-%m-%d %H:%M:%S'`" --allow-empty && git push -f && cd ..; fi;
 
