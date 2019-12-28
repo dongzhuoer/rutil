@@ -1,37 +1,39 @@
-# to make a universe .travis.yml, I move env $system_dep to repository settings
 dist: bionic
 language: minimal
-git:
-  depth: false
-  submodules: false
 cache: 
-  directories: $HOME/.local/lib/R/
-env:
-  matrix:
-    - job=build  
-    - job=test
-    - job=pkgdown
-
-before_install: if [ "$job" == "build" ]; then export tag=remotes; else if [ "$job" == "test" ]; then export tag=deverse; else export tag=pkgdown; fi; fi;
-install: 
-  # create container
-  - docker run -dt --name rlang0 -u `id -u`:`id -g` -w $HOME/$TRAVIS_REPO_SLUG -e CI=true -e GITHUB_PAT=$GITHUB_PAT -v $TRAVIS_BUILD_DIR:$HOME/$TRAVIS_REPO_SLUG -v $HOME/.local/lib/R:$HOME/.local/lib/R dongzhuoer/rlang:$tag 2> /dev/null
-  # add user & group (assuming the image contains no user)
-  - docker exec -u root rlang0 groupadd `id -gn` -g `id -g`
-  - docker exec -u root rlang0 useradd $USER -u `id -u` -g `id -g`
-  # install system dependency
-  - docker exec -u root rlang0 bash -c "apt update && apt -y install $system_dep"
-script:
-  # build
-  - if [ "$job" == "build" ];   then docker exec rlang0 Rscript -e "remotes::install_local(force = TRUE, upgrade = TRUE)"; fi;
-  # testthat
-  - if [ "$job" == "test" ];    then docker exec rlang0 Rscript -e "remotes::install_deps(force = TRUE,  upgrade = TRUE, dependencies = TRUE)"; fi;
-  - if [ "$job" == "test" ]; then docker exec rlang0 Rscript -e "pkgload::load_all(); testthat::test_dir('tests/testthat/'); testthat::test_dir('tests/testthat/', reporter = 'fail')"; fi; # default reports summary result, fail exit no-zero when a test fails
-  # pkgdown and deploy to GitHub Pages
-  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 Rscript -e "remotes::install_local(force = TRUE, upgrade = TRUE, dependencies = TRUE)"; fi;
-  - if [ "$job" == "pkgdown" ]; then docker exec rlang0 Rscript -e "pkgdown::build_site()"; fi;
-  - if [ "$job" == "pkgdown" ]; then git clone --depth 1 -b gh-pages https://$GITHUB_PAT@github.com/$TRAVIS_REPO_SLUG.git $HOME/gh-pages && mv $HOME/gh-pages/.git pkgdown; fi;
-  - if [ "$job" == "pkgdown" ]; then cd pkgdown && rm .gitignore && git add --all && git commit -m "[skip ci] build pkgdown at `date '+%Y-%m-%d %H:%M:%S'`" --allow-empty && git push -f && cd ..; fi;
-
-notifications:
-  email: false
+  directories: $HOME/.local/lib/R/site-library
+before_script: repo=`echo $TRAVIS_REPO_SLUG | sed 's/dongzhuoer\///'`
+jobs:
+  include: 
+    - stage: test
+      name: install
+      script:
+        - docker run -dt --name rlang0 -v $HOME/.local/lib/R/site-library:/usr/local/lib/R/site-library dongzhuoer/rlang:remotes 2> /dev/null
+        - docker exec -e GITHUB_PAT=$GITHUB_PAT rlang0 Rscript -e "remotes::install_github('dongzhuoer/$repo', force = TRUE, upgrade = TRUE)"
+        - docker exec rlang0 Rscript -e "library($repo)" || exit 1
+        - docker exec rlang0 chown -R `id -u`:`id -g` /usr/local/lib/R/site-library
+    - name: testthat
+      script:
+        - docker run -dt --name rlang0 -w /root -v `pwd`:/root -v $HOME/.local/lib/R/site-library:/usr/local/lib/R/site-library dongzhuoer/rlang:deverse 2> /dev/null
+        - docker exec rlang0 Rscript -e "remotes::install_deps(force = TRUE,  upgrade = TRUE, dependencies = TRUE)"
+        - docker exec rlang0 Rscript -e "pkgload::load_all(); testthat::test_dir('tests/testthat/')"  # summary results
+        - docker exec rlang0 Rscript -e "pkgload::load_all(); testthat::test_dir('tests/testthat/', reporter = 'fail')"  || exit 1 
+        - docker exec rlang0 chown -R `id -u`:`id -g` /usr/local/lib/R/site-library
+    - stage: deploy
+      name: release
+      script: skip
+    - name: pkgdown
+      script:
+        - docker run -dt --name rlang0 -w /root -v `pwd`:/root -v $HOME/.local/lib/R/site-library:/usr/local/lib/R/site-library dongzhuoer/rlang:pkgdown 2> /dev/null
+        - docker exec rlang0 bash -c 'echo -e "[user]\n\tname = Zhuoer Dong\n\temail = dongzhuoer@mail.nankai.edu.cn\n" > .gitconfig'
+        - docker exec rlang0 Rscript -e "remotes::install_local(force = TRUE, upgrade = TRUE, dependencies = TRUE)"
+        - docker exec rlang0 Rscript -e "pkgdown::build_site(override = list(destination = '/output'))"
+        - docker exec rlang0 test -f /output/index.html || exit 1
+        - docker exec rlang0 chown -R `id -u`:`id -g` /usr/local/lib/R/site-library
+        - docker exec -e GITLAB_TOKEN=$GITLAB_TOKEN rlang0 git clone --depth 1 -b dongzhuoer/$repo https://gitlab-ci-token:$GITLAB_TOKEN@gitlab.com/dongzhuoer/pkgdown.dongzhuoer.com.git /git 
+        - docker exec rlang0 mv /git/.git /output
+        - docker exec rlang0 rm -rf /git
+        - docker exec -w /output rlang0 git add --all
+        - docker exec -w /output rlang0 git commit -m "Travis build at `date '+%Y-%m-%d %H:%M:%S'`" --allow-empty 
+        - docker exec -w /output rlang0 git push
+        - wget https://github.com/dongzhuoer/build-website/raw/master/trigger.sh && bash -x trigger.sh pkgdown
