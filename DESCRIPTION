@@ -4,8 +4,8 @@ Title: Some utility functions in bioinformatics
 Version: 0.2.0
 Authors@R: person("Zhuoer", "Dong", email = "dongzhuoer@mail.nankai.edu.cn", 
     role = c("aut", "cre"))
-Description: refer to https://dongzhuoer.github.io/biozhuoer
-URL: https://dongzhuoer.github.io/biozhuoer, https://github.com/dongzhuoer/biozhuoer
+Description: refer to https://github.com/dongzhuoer/biozhuoer
+URL: https://pkgdown.dongzhuoer.com/dongzhuoer/biozhuoer, https://github.com/dongzhuoer/biozhuoer
 BugReports: https://github.com/dongzhuoer/biozhuoer/issues
 License: file LICENSE
 Encoding: UTF-8

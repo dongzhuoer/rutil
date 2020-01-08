@@ -10,15 +10,15 @@
     "tasks": [
         {
             "label": "view GitHub",
-            "command": "google-chrome https://github.com/dongzhuoer/${workspaceFolderBasename} 2> /dev/null",
+            "command": "firefox https://github.com/dongzhuoer/${workspaceFolderBasename} 2> /dev/null",
         },
         {
             "label": "view local pkgdown",
-            "command": "google-chrome pkgdown/index.html 2> /dev/null",
+            "command": "firefox pkgdown/index.html 2> /dev/null",
         },
         {
             "label": "view online pkgdown",
-            "command": "google-chrome https://dongzhuoer.github.io/${workspaceFolderBasename} 2> /dev/null",
+            "command": "firefox https://pkgdown.dongzhuoer.com/dongzhuoer/${workspaceFolderBasename} 2> /dev/null",
         },
         {
             "label": "document",
