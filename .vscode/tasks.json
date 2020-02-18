@@ -14,7 +14,7 @@
         },
         {
             "label": "view local pkgdown",
-            "command": "firefox pkgdown/index.html 2> /dev/null",
+            "command": "firefox pkgdown/output/index.html 2> /dev/null",
         },
         {
             "label": "view online pkgdown",
@@ -34,7 +34,7 @@
         },
         {
             "label": "pkgdown",
-            "command": "Rscript -e 'pkgdown::build_site()'",
+            "command": "Rscript -e 'pkgdown::build_site(lazy = T)'",
             "dependsOn": [
                 "document"
             ],

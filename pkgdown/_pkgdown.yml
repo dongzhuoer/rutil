@@ -1,4 +1,4 @@
-destination: pkgdown
+destination: pkgdown/output
 url: https://pkgdown.dongzhuoer.com/dongzhuoer/biozhuoer
 
 authors:
