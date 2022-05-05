@@ -20,7 +20,7 @@ tibble
 \itemize{
 \item name: character. sequence header (without '>')
 \item seq:  character. sequence itself, I named it \code{seq} instead of \code{sequence} to
-save 62.5% of time (and everyone using R should take it for granted that seq
+save 62.5\% of time (and everyone using R should take it for granted that seq
 means sequence)
 }
 }
@@ -30,8 +30,8 @@ into a tibble (see \strong{Value}). See \emph{FASTA format} for the requirements
 input file.
 }
 \details{
-Previously, I implemented fasta as a named character (in
-\code{\link[bioinfor:read_fasta]{bioinfor::read_fasta()}}). But I found it more and more inconvenient as I
+Previously, I implemented fasta as a named character
+(\code{bioinfor::read_fasta()}). But I found it more and more inconvenient as I
 used it. Many times when you manipulate the character, the name got lost.
 Finally, I decided to reimplement it as a tibble. That why this package
 come into being.
@@ -48,8 +48,8 @@ lines. Additionly, a file contains odd number of lines will cause
 \code{pre_line=TURE} to be ignored
 
 For \code{unalign}, when deal with large aligned file with linebreak containing
-many '-'s, implement \emph{unalign} (\code{\link[stringr:str_replace_all]{stringr::str_replace_all()}} in
-\code{\link[=read_fasta]{read_fasta()}}) is about 15% faster than do that externally, i.e. after
+many '-'s, implement \emph{unalign} (\code{\link[stringr:str_replace]{stringr::str_replace_all()}} in
+\code{\link[=read_fasta]{read_fasta()}}) is about 15\% faster than do that externally, i.e. after
 \code{\link[=read_fasta]{read_fasta()}} returns.
 }
 \section{FASTA format}{
@@ -87,25 +87,24 @@ deliberately create one.
 }
 
 \examples{
-system.file('extdata', 'example.fasta', package = 'biozhuoer') \%>\% read_fasta();
+system.file('extdata', 'example.fasta', package = 'rutil') |> read_fasta()
 
-system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') \%>\% read_fasta();
+system.file('extdata', 'aligned-multiline.fasta', package = 'rutil') |> read_fasta()
 
-system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') \%>\% read_fasta(unalign = TRUE);
+system.file('extdata', 'aligned-multiline.fasta', package = 'rutil') |> read_fasta(unalign = TRUE)
 
 
 # crazy examples
-read_fasta('>na>me\\nATCG');
+read_fasta('>na>me\nATCG')
 
-read_fasta('>name\\nAT>CG');
+read_fasta('>name\nAT>CG')
 
-read_fasta('>\\nATCG');
+read_fasta('>\nATCG')
 
-read_fasta('>name\\n')
+read_fasta('>name\n')
 
-read_fasta(paste0(c('>', rep('x', 10000), '\\nATCG'), collapse = ''));
+read_fasta(paste0(c('>', rep('x', 10000), '\nATCG'), collapse = ''))
 
-tempfile() \%T>\% readr::write_file('>name', .)  \%T>\% readr::read_file() \%>\% read_fasta;
-
+read_fasta(I('>name'))
 
 }

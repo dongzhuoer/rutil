@@ -1,13 +1,11 @@
-
-
 #' @title Read sequences from a fasta file.
 #'
 #' @description `read_fasta()` reads all sequences contained in a fasta file
 #'   into a tibble (see **Value**). See _FASTA format_ for the requirements of
 #'   input file.
 #'
-#' @details Previously, I implemented fasta as a named character (in
-#'   [bioinfor::read_fasta()]). But I found it more and more inconvenient as I
+#' @details Previously, I implemented fasta as a named character 
+#'   (`bioinfor::read_fasta()`). But I found it more and more inconvenient as I
 #'   used it. Many times when you manipulate the character, the name got lost.
 #'   Finally, I decided to reimplement it as a tibble. That why this package
 #'   come into being.
@@ -44,26 +42,25 @@
 #'
 #'
 #' @examples
-#' system.file('extdata', 'example.fasta', package = 'biozhuoer') %>% read_fasta();
+#' system.file('extdata', 'example.fasta', package = 'rutil') |> read_fasta()
 #'
-#' system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') %>% read_fasta();
+#' system.file('extdata', 'aligned-multiline.fasta', package = 'rutil') |> read_fasta()
 #'
-#' system.file('extdata', 'aligned-multiline.fasta', package = 'biozhuoer') %>% read_fasta(unalign = TRUE);
+#' system.file('extdata', 'aligned-multiline.fasta', package = 'rutil') |> read_fasta(unalign = TRUE)
 #'
 #'
 #' # crazy examples
-#' read_fasta('>na>me\nATCG');
+#' read_fasta('>na>me\nATCG')
 #'
-#' read_fasta('>name\nAT>CG');
+#' read_fasta('>name\nAT>CG')
 #'
-#' read_fasta('>\nATCG');
+#' read_fasta('>\nATCG')
 #'
 #' read_fasta('>name\n')
 #'
-#' read_fasta(paste0(c('>', rep('x', 10000), '\nATCG'), collapse = ''));
+#' read_fasta(paste0(c('>', rep('x', 10000), '\nATCG'), collapse = ''))
 #'
-#' tempfile() %T>% readr::write_file('>name', .)  %T>% readr::read_file() %>% read_fasta;
-#'
+#' read_fasta(I('>name'))
 #'
 #' @section FASTA format: The minimum requirement is that it can only contain
 #'   sequences (can use any character except for '>', at least at the begining)
@@ -102,7 +99,6 @@
 #'   1. test2.fasta big aligned file with linebreak.
 #'
 #' @export
-#'
 read_fasta <- function(file, per_line = FALSE, unalign = FALSE) {
 	#file  = 'data-raw/test.fasta';
 	content <- readr::read_lines(file);
@@ -124,20 +120,15 @@ read_fasta <- function(file, per_line = FALSE, unalign = FALSE) {
 		name <- content[header_line];
 
 		content[header_line] = '>';
-		if (unalign) content %<>% stringr::str_replace_all('-', '');
-		content %<>% paste0(collapse = '');
+		if (unalign) content <- content |> stringr::str_replace_all('-', '');
+		content <- content |> paste0(collapse = '');
 
 		seq = stringr::str_split(content, '>')[[1]][-1]; #the first line is empty
 	}
 
-	name %<>% stringr::str_replace('^>', '');
+	name <- name |> stringr::str_replace('^>', '');
 	tibble::tibble(name, seq);
 }
-
-#Rprof(interval = 0.0002);read_fasta('data-raw/test12.fasta', F);Rprof(NULL);summaryRprof()
-#Rprof(interval = 0.0002);read_fasta('data-raw/test12.fasta', T);Rprof(NULL);summaryRprof()
-#Rprof(interval = 0.0002);read_fasta('data-raw/test2.fasta', F, T);Rprof(NULL);summaryRprof()
-#Rprof(interval = 0.0002);invisible(stringr::str_replace_all(read_fasta('data-raw/test2.fasta', F, F), '-', ''));Rprof(NULL);summaryRprof()
 
 
 
@@ -153,13 +144,12 @@ read_fasta <- function(file, per_line = FALSE, unalign = FALSE) {
 #'
 #' @examples
 #' {
-#'     input_file  <- system.file('extdata', 'example.fasta', package = 'biozhuoer')
-#'     output_file <- tempfile();
+#'     input_file  <- system.file('extdata', 'example.fasta', package = 'rutil')
+#'     output_file <- tempfile()
 #'     write_fasta(read_fasta(input_file), output_file)
 #' }
 #'
 #' @export
-
 write_fasta <- function(fasta, path, width) {
 	if (!missing(width)) .NotYetUsed(width);
 

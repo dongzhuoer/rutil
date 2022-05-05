@@ -21,8 +21,8 @@ overwrite
 }
 \examples{
 {
-    input_file  <- system.file('extdata', 'example.fasta', package = 'biozhuoer')
-    output_file <- tempfile();
+    input_file  <- system.file('extdata', 'example.fasta', package = 'rutil')
+    output_file <- tempfile()
     write_fasta(read_fasta(input_file), output_file)
 }
 

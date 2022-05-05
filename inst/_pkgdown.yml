@@ -1,5 +1,4 @@
-destination: pkgdown/output
-url: https://pkgdown.dongzhuoer.com/dongzhuoer/biozhuoer
+url: https://dongzhuoer.github.io/rutil
 
 authors:
     Zhuoer Dong:
@@ -8,8 +7,3 @@ authors:
 template:
     params:
         bootswatch: cerulean
-
-
-
-
-

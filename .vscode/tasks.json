@@ -9,35 +9,8 @@
     },
     "tasks": [
         {
-            "label": "view GitHub",
-            "command": "firefox https://github.com/dongzhuoer/${workspaceFolderBasename} 2> /dev/null",
-        },
-        {
-            "label": "view local pkgdown",
-            "command": "firefox pkgdown/output/index.html 2> /dev/null",
-        },
-        {
-            "label": "view online pkgdown",
-            "command": "firefox https://pkgdown.dongzhuoer.com/dongzhuoer/${workspaceFolderBasename} 2> /dev/null",
-        },
-        {
             "label": "document",
-            "command": "Rscript -e 'Rcpp::compileAttributes(); roxygen2::roxygenize()'",
-        },
-        {
-            "label": "vignettes",
-            "command": "Rscript -e \"rmarkdown::render('R-raw/vignettes.Rmd')\"",
-        },
-        {
-            "label": "data",
-            "command": "Rscript -e \"rmarkdown::render('R-raw/data.Rmd')\"",
-        },
-        {
-            "label": "pkgdown",
-            "command": "Rscript -e 'pkgdown::build_site(lazy = T)'",
-            "dependsOn": [
-                "document"
-            ],
+            "command": "Rscript -e 'roxygen2::roxygenize()'",
         },
         {
             "label": "build",
@@ -57,6 +30,22 @@
                 "kind": "test",
                 "isDefault": true
             },
+        },
+        {
+            "label": "vignettes",
+            "command": "for file in $(ls vignettes/*Rmd); do Rscript -e \"rmarkdown::render('$file', output_dir = 'inst/doc')\"; done",
+        },
+        {
+            "label": "pkgdown",
+            "command": "Rscript -e 'pkgdown::build_site(lazy = T)'",
+            "dependsOn": [
+                "document"
+            ],
+        },
+        {
+            "label": "deploy pkgdown",
+            "options": {"cwd": "${workspaceFolder}/docs"},
+            "command": "git add .; git commit -m 'rebuild pkgdown'; git push",
         },
     ]
 }
