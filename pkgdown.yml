@@ -1,8 +1,10 @@
-pandoc: '2.9'
-pkgdown: 1.4.1
+pandoc: '2.18'
+pkgdown: 2.0.3
 pkgdown_sha: ~
-articles: []
+articles:
+  rutil: rutil.html
+last_built: 2022-05-05T02:55Z
 urls:
-  reference: https://dongzhuoer.github.io/biozhuoer/reference
-  article: https://dongzhuoer.github.io/biozhuoer/articles
+  reference: https://dongzhuoer.github.io/rutil/reference
+  article: https://dongzhuoer.github.io/rutil/articles
 

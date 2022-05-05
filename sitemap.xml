@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dongzhuoer.github.io/biozhuoer/index.html</loc>
+    <loc>https://dongzhuoer.github.io/rutil/404.html</loc>
   </url>
   <url>
-    <loc>https://dongzhuoer.github.io/biozhuoer/reference/pkg_file.html</loc>
+    <loc>https://dongzhuoer.github.io/rutil/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://dongzhuoer.github.io/biozhuoer/reference/read_fasta.html</loc>
+    <loc>https://dongzhuoer.github.io/rutil/articles/biozhuoer.html</loc>
   </url>
   <url>
-    <loc>https://dongzhuoer.github.io/biozhuoer/reference/reexports.html</loc>
+    <loc>https://dongzhuoer.github.io/rutil/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://dongzhuoer.github.io/biozhuoer/reference/write_fasta.html</loc>
+    <loc>https://dongzhuoer.github.io/rutil/articles/rutil.html</loc>
   </url>
   <url>
-    <loc>https://dongzhuoer.github.io/biozhuoer/articles/biozhuoer.html</loc>
+    <loc>https://dongzhuoer.github.io/rutil/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/rutil/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/rutil/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/rutil/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/rutil/reference/read_fasta.html</loc>
+  </url>
+  <url>
+    <loc>https://dongzhuoer.github.io/rutil/reference/write_fasta.html</loc>
   </url>
 </urlset>
