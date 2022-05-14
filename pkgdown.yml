@@ -3,7 +3,7 @@ pkgdown: 2.0.3
 pkgdown_sha: ~
 articles:
   rutil: rutil.html
-last_built: 2022-05-05T02:55Z
+last_built: 2022-05-14T01:27Z
 urls:
   reference: https://dongzhuoer.github.io/rutil/reference
   article: https://dongzhuoer.github.io/rutil/articles
